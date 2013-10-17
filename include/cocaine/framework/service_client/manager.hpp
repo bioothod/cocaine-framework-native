@@ -8,10 +8,11 @@
 #include <cocaine/asio/tcp.hpp>
 #include <cocaine/messages.hpp>
 
+#include <boost/thread.hpp>
+
 #include <memory>
 #include <string>
 #include <mutex>
-#include <thread>
 
 namespace cocaine { namespace framework {
 
@@ -33,7 +34,7 @@ public:
     
 private:
     cocaine::io::reactor_t m_reactor;
-    std::thread m_thread;
+    boost::thread m_thread;
 };
 
 class service_manager_t :

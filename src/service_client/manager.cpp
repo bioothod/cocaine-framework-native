@@ -20,7 +20,7 @@ namespace {
 
 reactor_thread_t::reactor_thread_t() {
     execute(&set_name);
-    m_thread = std::thread(&cocaine::io::reactor_t::run, &m_reactor);
+    m_thread = boost::thread(&cocaine::io::reactor_t::run, &m_reactor);
 }
 
 void
