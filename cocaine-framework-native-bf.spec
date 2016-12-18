@@ -11,12 +11,17 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  boost-devel
 BuildRequires:  libev-devel
-BuildRequires:  msgpack-devel
 BuildRequires:  libcocaine-core2-devel
 %if %{defined rhel} && 0%{?rhel} < 7
 BuildRequires:  cmake28
 %else
 BuildRequires:  cmake
+%endif
+
+%if 0%{?fedora} >= 24
+Requires: compat-msgpack-devel
+%else
+Requires: msgpack-devel
 %endif
 
 %description
