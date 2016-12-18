@@ -19,9 +19,9 @@ BuildRequires:  cmake
 %endif
 
 %if 0%{?fedora} >= 24
-Requires: compat-msgpack-devel
+BuildRequires: compat-msgpack-devel
 %else
-Requires: msgpack-devel
+BuildRequires: msgpack-devel
 %endif
 
 %description
